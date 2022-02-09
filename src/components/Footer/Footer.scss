@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E8E8;
+}
+
+.footer {
+    background-color: black;
+    height: 300px;
+
+    .acessos-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        color: white;
+        padding-top: 20px;
+        gap: 5px;
+    }
+
+    .info{
+        color: white;
+        font-size: 12px;
+        text-align: center;
+    }
+}

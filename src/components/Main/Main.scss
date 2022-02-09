@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E8E8;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    
+    .poke-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .dados-pokemons {
+            border: solid 1px rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 165px;
+            height: 300px;
+            gap: 5px;
+            background-color: white;
+
+            img {
+                text-justify: center;
+                width: 120px;
+                height: 160px;
+            }
+
+            .poke-name {
+                text-transform: capitalize;
+                margin: 0;
+            }
+
+            .price-from {
+                margin: 0;
+                text-decoration: line-through;
+                font-size: 14px;
+            }
+
+            .price-to {
+                margin: 0;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+}

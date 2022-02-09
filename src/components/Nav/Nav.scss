@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E8E8;
+  }
+
+.acessos-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    
+    li {
+        padding: 0 10px;
+    }
+
+    &:hover a {
+        border-bottom: solid 3px;
+    }
+
+    &:nth-child(1) {
+        a { border-bottom-color: #FF0000 };
+    }
+
+    &:nth-child(2) {
+        a { border-bottom-color: #3B4CCA }; 
+    }
+
+    &:nth-child(3) {
+        a { border-bottom-color: #FFDE00 };
+    }
+}
