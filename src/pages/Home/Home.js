@@ -1,5 +1,5 @@
-import './Main.scss';
-import { Botao } from '../Botao/Botao';
+import './Home.scss';
+import { Botao } from '../../components/Botao';
 import { PokemonApi } from '../../services/api';
 import { useEffect, useState } from 'react';
 
@@ -15,16 +15,17 @@ const Pokemon = (props) => {
             <h3 className='poke-name'>{name}</h3>
             <p className='price-from'>R$ {price},00</p>
             <p className='price-to'>R$ {price * 0.8},00</p>
-            <Botao className='poke-comprar' texto='Comprar' />
+            <Botao className='poke-buy' texto='Comprar' />
         </section>
     )
 }
 
-export function Main(props) {
+export function Home(props) {
     const limit = 20;
     let total;
 
     const [state, setState] = useState({
+        loading: true,
         pokemons: [],
         currentPage: 0,
         total: 0,
@@ -42,11 +43,28 @@ export function Main(props) {
             }));
         });
     }, [state.currentPage]);
+    
+    const loadMore = () => {
+
+        let page = state.currentPage;
+
+        if ((page + 1) >= state.totalPages) return;
+
+        page += 1;
+
+        setState((prev) => ({
+            ...prev,
+            currentPage: page
+        }));
+    }
 
     return (
         <main className='main'>
             <div className='poke-list'>
                 {state.pokemons}
+            </div>
+            <div className='button-load'>
+                <Botao texto='Carregar' onClick={loadMore}/>
             </div>
         </main>
     )

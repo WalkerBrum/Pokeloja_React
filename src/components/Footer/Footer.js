@@ -1,6 +1,6 @@
 import './Footer.scss';
 import { navItens } from '../Nav/navItens';
-import { footer } from './footerItens';
+import { footerItens } from './footerItens';
 
 export function Footer() {
     return (
@@ -17,7 +17,7 @@ export function Footer() {
             </div>
             <div>
                 <ul className='acessos-footer'>
-                    {footer.map((item, index) => <li key={index}>{item}</li>)}
+                    {footerItens.map((item, index) => <li key={index}>{item}</li>)}
                 </ul>
             </div>
             <p className='info'>2021 PokéLoja 2022. Todos os direitos reservados</p>

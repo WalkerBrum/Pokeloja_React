@@ -1,15 +1,17 @@
 button {
-    width: 120px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     font-size: 16px;
     color: white; 
     cursor: pointer;
     background-color: rgb(17, 17, 99); 
+    font-weight: bold;
 }
 
 button:hover {
     background-color: darkblue;
     box-shadow: 0 0 0.3em darkblue;
 }
+
+

@@ -1,8 +1,8 @@
 import './Botao.scss';
 
-export function Botao( {clicou, texto }) {
+export function Botao( {texto, ...props }) {
     return (
-        <button onclick={clicou}>
+        <button {...props}>
             {texto}
         </button>
     )
