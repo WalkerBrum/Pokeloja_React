@@ -64,7 +64,7 @@ export function Home(props) {
                 {state.pokemons}
             </div>
             <div className='button-load'>
-                <Botao texto='Carregar' onClick={loadMore}/>
+                <Botao texto='Carregar mais' onClick={loadMore}/>
             </div>
         </main>
     )
