@@ -14,16 +14,16 @@ export function Footer() {
                 </div>
             </div>
             <div className='social-media'>
-                    <a href='https://github.com/walkerBrum' target='_blank' title='github'>
+                    <a href='https://github.com/walkerBrum' target="_blank" rel='noreferrer' title='github'>
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
-                    <a href='https://www.linkedin.com/in/walkerlobato/' target='_blank' title='linkedin'>
+                    <a href='https://www.linkedin.com/in/walkerlobato/' target='_blank' rel='noreferrer' title='linkedin'>
                     <FontAwesomeIcon icon={faFacebookSquare} />
                     </a>
-                    <a href='https://www.facebook.com/walker.brum' target='_blank' title='instagram'>
+                    <a href='https://www.facebook.com/walker.brum' target='_blank' rel='noreferrer' title='instagram'>
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
-                    <a href='https://www.instagram.com/brumwalker/' target='_blank' title='facebook'>
+                    <a href='https://www.instagram.com/brumwalker/' target='_blank' rel='noreferrer' title='facebook'>
                         <FontAwesomeIcon icon={faInstagram} />
                     </a>
             </div>

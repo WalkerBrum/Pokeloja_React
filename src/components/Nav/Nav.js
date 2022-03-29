@@ -1,10 +1,5 @@
 import './Nav.scss';
-
-export const navItens = [
-    'Home', 
-    'Sobre', 
-    'Contato'
-]
+import { navItens } from './navItens';
 
 export function Nav() {
     return (
