@@ -1,10 +1,26 @@
 import './Nav.scss';
-import { navItens } from './navItens';
+import { Link } from 'react-router-dom';
+
+const routes = ['/', 'sobre', 'contato']
 
 export function Nav() {
     return (
-        <ul className="acessos-menu">
-            {navItens.map((item, index) => <li key={index} ><a href='#'>{item}</a></li> )}
+        <ul className='acessos-menu'>
+                <li>
+                    <Link to={'/'} className='home'>
+                        <span>Home</span>
+                    </Link>
+                </li> 
+                <li className='sobre'>
+                    <Link to={'/sobre'}>
+                        <span>Sobre</span>
+                    </Link>
+                </li> 
+                <li className='contato'>
+                    <Link to={'/contato'}>
+                        <span>Contato</span>
+                    </Link>
+                </li> 
         </ul>
     )
 }

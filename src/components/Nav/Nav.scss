@@ -10,30 +10,43 @@
   }
 
 .acessos-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: space-between;
-    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-self: stretch;
+    margin-left: 30px;
     li {
-        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        text-align: center;
         font-size: 20px;
-    }
+        
+        &:hover a {
+            border-bottom: solid 6px;
+        }
 
-    &:hover a {
-        border-bottom: solid 3px;
-    }
-
-    &:nth-child(1) {
-        a { border-bottom-color: #FF0000 };
-    }
-
-    &:nth-child(2) {
-        a { border-bottom-color: #3B4CCA }; 
-    }
-
-    &:nth-child(3) {
-        a { border-bottom-color: #FFDE00 };
+        &:nth-child(1) {
+            a { border-bottom-color: #FF0000 };
+        }
+        &:nth-child(2) {
+            a { border-bottom-color: #3B4CCA }; 
+        }
+        &:nth-child(3) {
+            a { border-bottom-color: #FFDE00 };
+        }
+        a {
+            &.active {
+                border-bottom-width: 6px;
+            }
+            border-bottom: solid 5px;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
     }
 }

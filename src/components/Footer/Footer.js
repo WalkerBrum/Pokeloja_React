@@ -1,18 +1,12 @@
 import './Footer.scss';
-import { navItens } from '../Nav/navItens';
+import { Nav } from '../Nav/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export function Footer() {
     return (
         <footer className="footer">
-            <div>
-                <div>
-                    <ul className='acessos-footer'>
-                        {navItens.map((item, index) => <li key={index}>{item}</li>)}
-                    </ul>
-                </div>
-            </div>
+            <Nav className='acessos-menu-footer'/>
             <div className='social-media'>
                     <a href='https://github.com/walkerBrum' target="_blank" rel='noreferrer' title='github'>
                         <FontAwesomeIcon icon={faGithub} />
