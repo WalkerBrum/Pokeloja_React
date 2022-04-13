@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #E8E8E8;
+  }
+
+.pokemon {
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+
+    .poke-ajuste {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+
+        img {
+            align-self: flex-start;
+        }
+
+        .poke-info {
+            margin: 50px;
+
+            .name-pokemon {
+                text-transform: capitalize;
+            }
+        }
+    }
+}

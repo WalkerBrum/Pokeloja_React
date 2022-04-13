@@ -2,15 +2,18 @@ import './Home.scss';
 import { Botao } from '../../components/Botao';
 import { PokemonApi } from '../../services/api';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Pokemon = (props) => {
+    const navigate = useNavigate()
+
     const name = props.name; 
     const id = props.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '');
     const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
     const price = Math.floor(name.length / 2 * 100);
 
     return (
-        <section className='dados-pokemons'> 
+        <section onClick={() => navigate(`/pokemon/${name}`)} className='dados-pokemons'>
             <img src={image} alt={name} className/>
             <h3 className='poke-name'>{name}</h3>
             <p className='price-from'>R$ {price},00</p>

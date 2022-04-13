@@ -11,6 +11,11 @@
 
 .footer {
     background-color: black;
+    padding-top: 50px;
+
+    .acessos-menu-footer {
+        color: white
+    }
 
     .acessos-footer {
         display: flex;
@@ -32,11 +37,14 @@
         margin: 0;
     }
 
-    .social-media a {
+    .social-media {
+        margin-top: 100px;
+
+        a {
         padding: 5px;
         font-size: 20px;
         text-decoration: none;
         color: white;
-
+        }
     }
 }
