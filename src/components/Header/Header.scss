@@ -14,7 +14,7 @@
     align-items: flex-start;
     background-color: rgb(136, 218, 213);
     height: auto;
-    padding: 20px;
+    padding: 10px;
 
     .navegation {
         display: flex;
@@ -42,7 +42,6 @@
 
     }
 
-
     .search {
         position: relative;
     
@@ -66,5 +65,11 @@
             top: 15px;
             right: 5px;
         }
+    }
+}
+
+@media (min-width: 411px) {
+    .header {
+        padding: 20px;
     }
 }

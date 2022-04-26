@@ -35,10 +35,10 @@ export function Pokemon(props) {
                 <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${state.id}.png`} alt={state.name} />
                 <div className='poke-info'>
                     <h1 className='name-pokemon'>{String(state.name)}</h1>
-                    <p>{state.weight / 10}kg</p>
-                    <p>{state.height * 10}m</p>
+                    <p className='peso'>Peso: {state.weight / 10} kg</p>
+                    <p className='altura'>Altura: {state.height / 10} m</p>
                     <h3>Tipos</h3>
-                    <ul>
+                    <ul className>
                         {state.types.map(({ type }, index) => 
                         <li key={index}>
                             {type.name}
@@ -53,21 +53,25 @@ export function Pokemon(props) {
                     </ul>
                 </div>
             </div>
-            <div>
-                <h3>Habilidades</h3>
-                <ul className='habilidades'>
-                    {state.abilities.map(({ ability }, index) => 
-                    <li key={index}>
-                        {ability.name}
-                    </li>)}
-                </ul>
-                <h3>Movimentos</h3>
-                <ul className='movimentos'>
-                    {filtro.map(({ move }, index) =>
-                    <li key={index}>
-                        {move.name}  
-                    </li>)}
-                </ul>
+            <div className='poke-mov-hab'>
+                <div className='movimentos'>
+                    <h3>Movimentos</h3>
+                    <ul>
+                        {filtro.map(({ move }, index) =>
+                        <li key={index}>
+                            {move.name}
+                        </li>)}
+                    </ul>
+                </div>
+                <div className='habilidades'>
+                    <h3>Habilidades</h3>
+                    <ul>
+                        {state.abilities.map(({ ability }, index) =>
+                        <li key={index}>
+                            {ability.name}
+                        </li>)}
+                    </ul>
+                </div>
             </div>      
         </div>
     )

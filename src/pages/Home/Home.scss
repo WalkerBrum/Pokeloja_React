@@ -12,13 +12,13 @@
 .main {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 10px;
     
     .poke-list {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
 
         .dados-pokemons {
             border: solid 1px rgb(121, 101, 101);
@@ -26,12 +26,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 165px;
+            width: 160px;
             height: 300px;
             gap: 5px;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             cursor: pointer;
+            margin: 0;
 
             &:hover {
                 outline: solid 4px #bdbdbd;

@@ -10,24 +10,84 @@
   }
 
 .pokemon {
-    padding: 20px;
+    padding: 10px;
     background-color: white;
-    border-radius: 15px;
+    text-transform: capitalize;
+    font-size: 20px;
 
     .poke-ajuste {
-        padding: 30px;
-        display: flex;
-        align-items: center;
 
         img {
-            align-self: flex-start;
+            width: 100%;
         }
 
         .poke-info {
-            margin: 50px;
 
-            .name-pokemon {
+            .altura {
+                margin: 0;
+            }
+            
+            .peso {
+                margin: 0
+            }
+
+            ul {
+                text-align: left;
+            }
+        }
+    }
+
+    .poke-mov-hab {
+        display: flex;
+        justify-content: left;
+
+        .habilidades {
+            padding-left: 50px;
+        }
+
+    }
+}
+
+@media (min-width: 700px) {
+    .pokemon {
+        border-radius: 15px;
+        width: 100%;
+        margin-righ: 20px;
+    
+        .poke-ajuste {
+            padding: 30px;
+            display: flex;
+            align-items: center;
+    
+            img {
+                align-self: flex-start;
+            }
+    
+            .poke-info {
+                margin: 10px;
                 text-transform: capitalize;
+    
+                .altura {
+                    margin: 0;
+                }
+                
+                .peso {
+                    margin: 0
+                }
+    
+                ul {
+                    text-align: left;
+                }
+            }
+        }
+    
+        .poke-mov-hab {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start; 
+            
+            .habilidades {
+                padding-left: 100px;
             }
         }
     }

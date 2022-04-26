@@ -23,7 +23,7 @@ export function Footer() {
             </div>
             <h5 className='info'>
                 PokéLoja 2022. Todos os direitos reservados<br/> 
-                E-commerce Project developed with React+JavaScript by Walker Brum
+                Projeto de E-commerce desenvolvido com React+JavaScript por Walker Brum
             </h5>
         </footer>
     )
