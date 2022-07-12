@@ -12,10 +12,10 @@ export function Footer() {
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
                     <a href='https://www.linkedin.com/in/walkerlobato/' target='_blank' rel='noreferrer' title='linkedin'>
-                    <FontAwesomeIcon icon={faFacebookSquare} />
+                    <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                     <a href='https://www.facebook.com/walker.brum' target='_blank' rel='noreferrer' title='instagram'>
-                        <FontAwesomeIcon icon={faLinkedin} />
+                        <FontAwesomeIcon icon={faFacebookSquare} />
                     </a>
                     <a href='https://www.instagram.com/brumwalker/' target='_blank' rel='noreferrer' title='facebook'>
                         <FontAwesomeIcon icon={faInstagram} />
@@ -23,7 +23,7 @@ export function Footer() {
             </div>
             <h5 className='info'>
                 PokéLoja 2022. Todos os direitos reservados<br/> 
-                Projeto de E-commerce desenvolvido com React+JavaScript por Walker Brum
+                Projeto de E-commerce desenvolvido com <a className='github' href='https://github.com/WalkerBrum/pokeloja-react' target='_blank'>React</a> por Walker Brum
             </h5>
         </footer>
     )

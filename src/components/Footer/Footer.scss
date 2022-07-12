@@ -15,18 +15,25 @@
 
     .info {
         color: white;
-        font-size: 12px;
+        font-size: 16px;
         text-align: center;
         padding: 20px;
         margin: 0;
+        line-height: 1.4rem;
+
+        .github {
+            text-decoration: none;
+            color: deepskyblue;
+            padding: 3px;
+        }
     }
 
     .social-media {
-        margin-top: 100px;
+        margin: 80px 0 20px;
 
         a {
         padding: 10px;
-        font-size: 20px;
+        font-size: 25px;
         text-decoration: none;
         color: white;
         }
