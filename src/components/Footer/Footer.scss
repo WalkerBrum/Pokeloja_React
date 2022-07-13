@@ -41,11 +41,13 @@
 }
 
 @media (min-width: 411px) {
-    .footer {
 
-        .acesos-menu-footer {
-            display: flex;
-            justify-content: flex-start;
+    .acesos-menu-footer {
+        display: flex;
+        justify-content: center;
+
+        ul {
+            justify-content: center;
         }
     }
 }

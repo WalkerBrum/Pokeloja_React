@@ -6,7 +6,9 @@ import { faFacebookSquare, faGithub, faLinkedin, faInstagram } from '@fortawesom
 export function Footer() {
     return (
         <footer className="footer">
-            <Nav className='acessos-menu-footer'/>
+            <div className='acessos-menu-footer'>
+                <Nav />
+            </div>
             <div className='social-media'>
                     <a href='https://github.com/walkerBrum' target="_blank" rel='noreferrer' title='github'>
                         <FontAwesomeIcon icon={faGithub} />
@@ -23,7 +25,7 @@ export function Footer() {
             </div>
             <h5 className='info'>
                 PokéLoja 2022. Todos os direitos reservados<br/> 
-                Projeto de E-commerce desenvolvido com <a className='github' href='https://github.com/WalkerBrum/pokeloja-react' target='_blank'>React</a> por Walker Brum
+                Projeto de E-commerce desenvolvido com <a className='github' href='https://github.com/WalkerBrum/pokeloja-react' target='_blank' rel="noreferrer">React</a> por Walker Brum
             </h5>
         </footer>
     )

@@ -10,7 +10,7 @@ export function Header() {
             <div className='navegation'>
                 <img className='logo' src={logo} alt='Pokémon'/>
                 <Nav />
-                <a href="">
+                <a href="#">
                     <FontAwesomeIcon icon={faShoppingCart} />
                 </a>
             </div>

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Aside } from './components/Aside';
 import { Footer } from './components/Footer';
+import { Cart } from './components/Cart';
 
 import { Home } from './pages/Home';
 import { Sobre } from './pages/Sobre';
@@ -26,6 +27,7 @@ function App() {
           <Aside/>
         </section>
         <Footer/>
+        <Cart />
       </BrowserRouter>
     </div>
   );

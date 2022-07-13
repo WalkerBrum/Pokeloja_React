@@ -73,5 +73,10 @@
 @media (min-width: 411px) {
     .header {
         padding: 20px;
+
+        .navegation .logo {
+            width: 200px;
+            height: 80px;
+        }
     }
 }

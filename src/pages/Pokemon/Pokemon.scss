@@ -31,7 +31,7 @@
                 margin: 0
             }
 
-            ul {
+            .type {
                 text-align: left;
             }
         }
@@ -50,7 +50,6 @@
 
 @media (min-width: 700px) {
     .pokemon {
-        border-radius: 15px;
         width: 100%;
         margin-right: 20px;
     
@@ -61,6 +60,7 @@
     
             img {
                 align-self: flex-start;
+                width: 70%;
             }
     
             .poke-info {

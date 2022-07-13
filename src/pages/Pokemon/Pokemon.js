@@ -3,9 +3,8 @@ import { PokemonApi } from '../../services/api';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 
-export function Pokemon(props) {
+export function Pokemon() {
     const { id } = useParams()
-    let count = 0
 
     const [state, setState] = useState({
         weight: 0,
@@ -18,14 +17,14 @@ export function Pokemon(props) {
 
     useEffect(() => {
         PokemonApi.getPokemonById(id).then(({ data }) =>{
-            console.log(data);
-            setState(data)
+            window.scrollTo(0, 0);
+            setState(data);
         })
     }, [id]);
 
     const filtro = state.moves.filter(function(move, index) {
         if (index <= 20) {
-            return move
+            return move;
         }
     })
 
@@ -38,7 +37,7 @@ export function Pokemon(props) {
                     <p className='peso'>Peso: {state.weight / 10} kg</p>
                     <p className='altura'>Altura: {state.height / 10} m</p>
                     <h3>Tipos</h3>
-                    <ul className>
+                    <ul className='type'>
                         {state.types.map(({ type }, index) => 
                         <li key={index}>
                             {type.name}
