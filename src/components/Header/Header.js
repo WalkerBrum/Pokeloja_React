@@ -10,9 +10,9 @@ export function Header() {
             <div className='navegation'>
                 <img className='logo' src={logo} alt='Pokémon'/>
                 <Nav />
-                <a href="#">
+                <span className='acess-cart'>
                     <FontAwesomeIcon icon={faShoppingCart} />
-                </a>
+                </span>
             </div>
             <div className='search'>
                 <input type='text' placeholder='Encontre o seu pokémon'/>
