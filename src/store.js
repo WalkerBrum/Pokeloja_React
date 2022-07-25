@@ -3,7 +3,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 export const counterSlice = createSlice({
     name: 'cart',
     initialState: {
-        open: false
+        open: false,
     },
     reducers: {
         cartOpen: state => {

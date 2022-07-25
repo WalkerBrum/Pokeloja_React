@@ -13,6 +13,7 @@ import { Pokemon } from './pages/Pokemon';
 import { Contato } from './pages/Contato';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
