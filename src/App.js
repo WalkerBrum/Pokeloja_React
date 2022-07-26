@@ -1,6 +1,9 @@
 import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from "react";
+import { cartClose } from "./store";
 
 import { Header } from './components/Header';
 import { Aside } from './components/Aside';
@@ -13,6 +16,19 @@ import { Pokemon } from './pages/Pokemon';
 import { Contato } from './pages/Contato';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  const keydown = (e) => {
+    if (e.code === 'Escape') {
+      dispatch(cartClose());
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", keydown, true);
+    return () => window.removeEventListener("keydown", keydown, true);
+  });
 
   return (
     <div className="App">

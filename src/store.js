@@ -8,11 +8,15 @@ export const counterSlice = createSlice({
     reducers: {
         cartOpen: state => {
             state.open = true;
-        }
+        },
+        cartClose: state => {
+            state.open = false;
+        },
+
     }    
 });
 
-export const { cartOpen } = counterSlice.actions;
+export const { cartOpen, cartClose } = counterSlice.actions;
 
 export default configureStore({
     reducer: {
