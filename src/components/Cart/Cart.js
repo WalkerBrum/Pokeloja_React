@@ -1,6 +1,5 @@
 import './Cart.scss';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { cartClose } from '../../store';
 
 export function Cart() {
