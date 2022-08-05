@@ -14,10 +14,18 @@ export const counterSlice = createSlice({
             state.open = false;
         },
         addToCart: (state, action) => {
-            state.items.push({
-                qnty: 1,
-                ...action.payload,
-              });
+            const hasPokemonsAdd = state.items.findIndex((pokemon) => pokemon.id === action.payload.id);
+
+            if (hasPokemonsAdd > -1) {
+                state.items[hasPokemonsAdd].qnty += 1;
+
+            } else {
+                state.items.push({
+                    qnty: 1,
+                    ...action.payload,
+                });
+            }
+            
 
               //console.log("Pokemons: " + JSON.stringify(state.items))
         }

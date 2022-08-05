@@ -29,11 +29,6 @@ export function Cart() {
                             X
                         </span>
                 </div>
-                <div className='cart-titles'>
-                    <h4>Nome</h4>
-                    <h4>Quantidade</h4>
-                    <h4>Preço</h4>
-                </div>
                 {pokemons.map((pokemon, index) => <CartItems key={index} item={pokemon} />)}
             </div>     
         </div>

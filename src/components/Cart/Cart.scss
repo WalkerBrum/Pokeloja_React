@@ -51,29 +51,66 @@
     }
 }
 
-.cart-titles {
-    display: flex;
-    justify-content: end;
-    gap: 20px;
-    font-size: 1rem;
-    font-weight: bolder;
-    letter-spacing: 2px;
-}
-
 .cart-items {
 
     .cart-pokemon {
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         gap: 20px;
         font-size: 1rem;
         letter-spacing: 2px;
-        border-top: solid 1px gray;
+        border-bottom: solid 2px rgba(173, 173, 173, 0.568);
         padding: 10px;
+        margin: 0 20px;
 
         img {
             width: 100px;
             height: 100px;
+        }
+
+        .cart-data {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 35px;
+
+            h4 {
+                text-transform: capitalize;
+                margin: 0;
+                font-size: 1.3rem;
+            }
+
+            .cart-qnty-price {
+                display: flex;
+                justify-content: space-between;
+                gap: 15px;
+
+                .cart-qnty {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+
+                    p{
+                        border: 1px solid black;
+                        padding: 7px;
+                    }
+
+                    span {
+                        cursor: pointer;
+                        font-weight: bolder;
+                    }
+
+                    .add-qnty {
+                        padding-top: 4px;
+                    }
+                }
+            }
+
+            .cart-price {
+                font-weight: bold;
+                padding-top: 9px;
+            }
         }
     }
 }

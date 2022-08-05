@@ -8,9 +8,17 @@ export function CartItems(props) {
         <div className='cart-items'>
             <div className='cart-pokemon'>
                 <img src={item.image} alt={item.name} />
-                <h4>{item.name}</h4>
-                <p>{item.qnty}</p>
-                <p>R$ {item.price},00</p>
+                <div className='cart-data'>
+                    <h4>{item.name}</h4>
+                    <div className='cart-qnty-price'>
+                        <div className='cart-qnty'>
+                            <span className='less-qnty'>-</span>
+                            <p>{item.qnty}</p>
+                            <span className='add-qnty'>+</span>
+                        </div>
+                        <p className='cart-price'>R$ {item.price},00</p>
+                    </div>
+                </div>
             </div>
         </div>
     )
