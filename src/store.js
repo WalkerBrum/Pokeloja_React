@@ -4,6 +4,7 @@ export const counterSlice = createSlice({
     name: 'cart',
     initialState: {
         open: false,
+        items: [],
     },
     reducers: {
         cartOpen: state => {
@@ -12,11 +13,18 @@ export const counterSlice = createSlice({
         cartClose: state => {
             state.open = false;
         },
+        addToCart: (state, action) => {
+            state.items.push({
+                qnty: 1,
+                ...action.payload,
+              });
 
+              //console.log("Pokemons: " + JSON.stringify(state.items))
+        }
     }    
 });
 
-export const { cartOpen, cartClose } = counterSlice.actions;
+export const { cartOpen, cartClose, addToCart } = counterSlice.actions;
 
 export default configureStore({
     reducer: {
