@@ -5,6 +5,7 @@ export const counterSlice = createSlice({
     initialState: {
         open: false,
         items: [],
+        total: 0,
     },
     reducers: {
         cartOpen: state => {
@@ -25,14 +26,20 @@ export const counterSlice = createSlice({
                     ...action.payload,
                 });
             }
-            
 
-              //console.log("Pokemons: " + JSON.stringify(state.items))
+            state.total = state.items.reduce((acumulador, item) => acumulador + item.price * item.qnty, 0)
+        },
+        moreQnty: (state, action) => {
+            const pokemonsSameId = state.items.findIndex((pokemon) => pokemon.id === action.payload.itemId);
+
+            if (pokemonsSameId > -1) {
+                state.items[pokemonsSameId].qnty += 1;
+            }
         }
     }    
 });
 
-export const { cartOpen, cartClose, addToCart } = counterSlice.actions;
+export const { cartOpen, cartClose, addToCart, moreQnty } = counterSlice.actions;
 
 export default configureStore({
     reducer: {
