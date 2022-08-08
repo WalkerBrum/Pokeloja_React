@@ -1,6 +1,6 @@
 import './Cart.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { moreQnty } from '../../store';
+import { moreQnty, lessQnty } from '../../store';
 
 
 export function CartItems(props) {
@@ -8,19 +8,10 @@ export function CartItems(props) {
     const { item } = props;
 
     const dispatch = useDispatch();
-    const { items: pokemons } = useSelector(state => state.cart);
     const itemId = item.id
 
-    const lessQnty = () => {
-        console.log(pokemons)
-        pokemons.map((pokemon) => {
-            if (item.id === pokemon.id) {
-                console.log(item.id)
-                console.log(pokemon.id)
-                console.log(pokemon.qnty)
-                pokemon.qnty -=1;
-            }
-        })
+    const lessQntyPoke = () => {
+        dispatch(lessQnty(itemId));
     }
 
     const moreQntyPoke = () => {
@@ -35,11 +26,11 @@ export function CartItems(props) {
                     <h4>{item.name}</h4>
                     <div className='cart-qnty-price'>
                         <div className='cart-qnty'>
-                            <span className='less-qnty' onClick={lessQnty}>-</span>
+                            <span className='less-qnty' onClick={lessQntyPoke}>-</span>
                             <p>{item.qnty}</p>
                             <span className='add-qnty' onClick={moreQntyPoke}>+</span>
                         </div>
-                        <p className='cart-price'>R$ {item.price},00</p>
+                        <p className='cart-price'>R$ {item.price * item.qnty},00</p>
                     </div>
                 </div>
             </div>
