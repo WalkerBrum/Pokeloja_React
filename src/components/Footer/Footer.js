@@ -6,9 +6,7 @@ import { faFacebookSquare, faGithub, faLinkedin, faInstagram } from '@fortawesom
 export function Footer() {
     return (
         <footer className="footer">
-            <div className='acessos-menu-footer'>
-                <Nav />
-            </div>
+            <Nav className='nav-footer'/>
             <div className='social-media'>
                     <a href='https://github.com/walkerBrum' target="_blank" rel='noreferrer' title='github'>
                         <FontAwesomeIcon icon={faGithub} />

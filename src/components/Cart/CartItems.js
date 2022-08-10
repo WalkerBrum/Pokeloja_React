@@ -1,14 +1,16 @@
 import './Cart.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { moreQnty, lessQnty } from '../../store';
+import { moreQnty, lessQnty, deleteToCart } from '../../store';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 export function CartItems(props) {
     
-    const { item } = props;
+    let { item } = props;
 
     const dispatch = useDispatch();
-    const itemId = item.id
+    const itemId = item.id;
 
     const lessQntyPoke = () => {
         dispatch(lessQnty(itemId));
@@ -18,6 +20,10 @@ export function CartItems(props) {
         dispatch(moreQnty(itemId));
     }
 
+    const removePoke = ()  => {
+        item = {}
+    }
+    
     return (
         <div className='cart-items'>
             <div className='cart-pokemon'>
@@ -32,6 +38,10 @@ export function CartItems(props) {
                         </div>
                         <p className='cart-price'>R$ {item.price * item.qnty},00</p>
                     </div>
+                    <FontAwesomeIcon 
+                        className='fa-trash' 
+                        icon={faTrash} 
+                        onClick={removePoke}/>
                 </div>
             </div>
         </div>

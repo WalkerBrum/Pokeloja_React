@@ -78,23 +78,24 @@
         display: flex;
         gap: 20px;
         border-bottom: solid 2px rgba(173, 173, 173, 0.568);
-        padding: 10px;
+        padding: 10px 0;
 
         img {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 110px;
         }
 
         .cart-data {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-left: 18px;
+            margin-left: 30px;
 
             h4 {
                 text-transform: capitalize;
                 margin: 0;
                 font-size: 1.3rem;
+                font-weight: bolder;
                 letter-spacing: 2px;
             }
 
@@ -102,6 +103,8 @@
                 display: flex;
                 justify-content: space-between;
                 gap: 15px;
+                margin: 10px 10px 5px 10px;
+                font-size: 1.1rem;
 
                 .cart-qnty {
                     display: flex;
@@ -112,6 +115,7 @@
                     p{
                         border: 1px solid black;
                         padding: 7px;
+                        margin: 0;
                     }
 
                     span {
@@ -126,8 +130,22 @@
             }
 
             .cart-price {
-                font-weight: bold;
                 padding-top: 9px;
+                margin: 0;
+            }
+
+
+            .fa-trash {
+                margin-left: 29px;
+                font-size: 0.9rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;  
+            }
+
+            .fa-trash:hover {
+                color: rgba(0, 0, 0, 0.705);
+                transition: 0.3s ease-in-out;  
             }
         }
     }

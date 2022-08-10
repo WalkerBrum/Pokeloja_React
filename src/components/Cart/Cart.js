@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { cartClose } from '../../store';
 import { CartItems } from './CartItems';
 import { Botao } from '../Botao/Botao';
+import { useEffect } from 'react';
 
 
 export function Cart() {
@@ -30,8 +31,7 @@ export function Cart() {
                     {pokemons.map((pokemon, index) => <CartItems key={index} item={pokemon} />)}
                     <p className="cart-total"><span>Total:</span> <span>R$ {total},00</span></p>
                     <Botao className='button-finalize-purchase' texto='Finalizar Compra' /> 
-                </div>}
-                
+                </div>}   
             </div>     
         </div>
     )
