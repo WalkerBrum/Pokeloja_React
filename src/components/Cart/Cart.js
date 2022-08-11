@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { cartClose } from '../../store';
 import { CartItems } from './CartItems';
 import { Botao } from '../Botao/Botao';
-import { useEffect } from 'react';
 
 
 export function Cart() {

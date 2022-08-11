@@ -4,7 +4,7 @@ import { PokemonApi } from '../../services/api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { cartOpen, addToCart } from '../../store';
+import { cartOpen, addToCart, cartValueTotal } from '../../store';
 
 const Pokemon = (props) => {
 
@@ -27,7 +27,8 @@ const Pokemon = (props) => {
             price: price * 0.8,
         }));
 
-        dispatch(cartOpen());       
+        dispatch(cartOpen());
+        dispatch(cartValueTotal());       
     }
 
     return (

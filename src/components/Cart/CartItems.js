@@ -1,6 +1,6 @@
 import './Cart.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { moreQnty, lessQnty, deleteToCart } from '../../store';
+import { useDispatch } from 'react-redux';
+import { moreQnty, lessQnty, deleteToCart, cartValueTotal } from '../../store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,10 +18,12 @@ export function CartItems(props) {
 
     const moreQntyPoke = () => {
         dispatch(moreQnty(itemId));
+        dispatch(cartValueTotal());
     }
 
     const removePoke = ()  => {
-        item = {}
+        dispatch(deleteToCart(itemId))
+        dispatch(cartValueTotal());
     }
     
     return (
