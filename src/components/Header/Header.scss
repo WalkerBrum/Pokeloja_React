@@ -40,17 +40,37 @@
             transition: width 0.2s ease-in;  
         }
 
-        .acess-cart {
-            color: black;
-            cursor: pointer;
-            font-size: 25px;
-            transition:  0.3s ease-in-out; 
-        }
+        .cart-division {
+            position: relative;
 
-        .acess-cart:hover{
-            color: rgba(0, 0, 0, 0.705);
-            transition: 0.3s ease-in-out;  
-        }
+            .acess-cart {
+                position: absolute;
+                color: black;
+                cursor: pointer;
+                font-size: 25px;
+                transition:  0.3s ease-in-out;
+                right: 1px;
+                top: -11px;
+            }
+    
+            .acess-cart:hover{
+                color: rgba(0, 0, 0, 0.705);
+                transition: 0.3s ease-in-out;  
+            }
+    
+            .cart-count {
+                position: absolute;
+                color: #cf0303;
+                padding: 2px 5px;
+                font-size: 0.9rem;
+                background-color: white;
+                border-radius: 50%;
+                font-weight: bold;
+                right: 2px;
+                top: -24px;
+            }
+
+        }    
 
     }
 
