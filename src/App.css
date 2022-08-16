@@ -37,7 +37,7 @@
   }
 }
 
-@media (min-width: 900px){
+@media (min-width: 1030px){
   section {
     display: flex;
     justify-content: space-between;

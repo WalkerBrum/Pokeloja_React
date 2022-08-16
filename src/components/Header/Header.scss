@@ -96,13 +96,15 @@
 
         .fa-search {
             position: absolute;
-            top: 28px;
-            right: 10px;
+            cursor: pointer;
+            font-size: 22px;
+            top: 26px;
+            right: 17px;
         }
     }
 }
 
-@media (min-width: 411px) {
+@media (min-width: 700px) {
     .header {
         padding: 20px;
 

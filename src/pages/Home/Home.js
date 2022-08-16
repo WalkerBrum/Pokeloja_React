@@ -11,7 +11,6 @@ const Pokemon = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-
     const name = props.name; 
     const id = props.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '');
     const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
@@ -28,7 +27,7 @@ const Pokemon = (props) => {
         }));
 
         dispatch(cartOpen());
-        dispatch(cartValueTotal());       
+        dispatch(cartValueTotal());     
     }
 
     return (
@@ -47,6 +46,7 @@ const Pokemon = (props) => {
 }
 
 export function Home() {
+
     const limit = 20;
     let total;
 

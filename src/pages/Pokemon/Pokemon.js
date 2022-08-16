@@ -44,7 +44,7 @@ export function Pokemon() {
                         </li>)}
                     </ul>
                     <h3>Status</h3>
-                    <ul>
+                    <ul className='status'>
                         {state.stats.map((stat, index) =>
                         <li key={index}>
                             {stat.stat.name} - {stat.base_stat} 
