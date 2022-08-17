@@ -1,0 +1,65 @@
+.contact {
+    background-color: white;
+    text-align: left;
+    padding: 30px 10px;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    padding: 30px 10px;
+
+    h1 {
+        text-align: center;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px;
+
+        h3 {
+            margin: 20px;
+        }
+
+        img {
+            width: 320px;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.712);
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                color: rgb(37, 104, 228);
+                padding-left: 5px;
+            }
+        }
+    }
+
+    .main-skills {
+        margin: 40px 10px;
+
+        h3 {
+            margin: 20px;
+        }
+
+        P {
+            line-height: 1.6rem;
+            text-align: justify;
+            text-indent: 5rem;
+        }
+
+        .hard-skills {
+            list-style: circle;
+            text-align: left;
+    
+            li {
+                padding-left: 10px;
+            }
+        }
+    }
+}
