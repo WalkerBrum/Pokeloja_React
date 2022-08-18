@@ -44,13 +44,10 @@
             position: relative;
 
             .acess-cart {
-                position: absolute;
                 color: black;
                 cursor: pointer;
                 font-size: 25px;
                 transition:  0.3s ease-in-out;
-                right: 1px;
-                top: -11px;
             }
     
             .acess-cart:hover{

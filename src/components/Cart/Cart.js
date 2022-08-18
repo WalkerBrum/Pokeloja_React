@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { cartClose } from '../../store';
 import { CartItems } from './CartItems';
 import { Botao } from '../Botao/Botao';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 export function Cart() {
@@ -20,11 +22,11 @@ export function Cart() {
             <div className={open ? 'cart-opened' : 'cart-closed'}>
                 <div className='header-cart'>
                     <h2>CARRINHO</h2>
-                    <span 
+                    <div 
                         className='close-cart'
                         onClick={() => dispatch(cartClose())}>
-                            X
-                        </span>
+                            FECHAR <FontAwesomeIcon icon={faArrowRight} />
+                    </div>
                 </div>
                 {pokemons.length > 0 && <div className='main-cart'>
                     {pokemons.map((pokemon, index) => <CartItems key={index} item={pokemon} />)}

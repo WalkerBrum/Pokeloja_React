@@ -13,8 +13,9 @@ export function Sobre() {
                     <li>ReactJs</li>
                     <li>React Redux</li>
                     <li>React DOM</li>
-                    <li>Hooks</li>
+                    <li>React Hooks</li>
                     <li>Axios</li>
+                    <li>JavaScript</li>
                     <li>CSS</li>
                     <li>Sass</li>
                     <li>HTML</li>
