@@ -4,18 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Nav } from '../Nav';
 import { useDispatch, useSelector } from 'react-redux';
-import { cartOpen } from '../../store';
-import { useEffect, useState } from 'react';
+import { cartOpen, setPokeNameForSearch } from '../../store';
+
 
 export function Header() {
 
     const dispatch = useDispatch();
     const { items: pokemons } = useSelector(state => state.cart);
-    const [ pokeNameForSearch, setPokeNameForSearch ] = useState();
-
-    useEffect(() => {
-        console.log(pokeNameForSearch)
-    }, [pokeNameForSearch]);
 
     return (
         <header className='header'>
@@ -35,7 +30,7 @@ export function Header() {
                 <input 
                     type='text' 
                     placeholder='Encontre o seu pokémon'
-                    onChange={(event) => setPokeNameForSearch(event.target.value)}/>
+                    onChange={(event) => dispatch(setPokeNameForSearch(event.target.value))}/>
                 <FontAwesomeIcon className='fa-search' icon={faSearch} />
             </div>
         </header>

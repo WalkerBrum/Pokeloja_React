@@ -3,13 +3,16 @@ import { Botao } from '../../components/Botao';
 import { PokemonApi } from '../../services/api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartOpen, addToCart, cartValueTotal } from '../../store';
+
+
 
 const Pokemon = (props) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const { pokeNameForSearch } = useSelector(state => state.cart);
 
     const name = props.name; 
     const id = props.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '');
@@ -26,6 +29,7 @@ const Pokemon = (props) => {
             price: price * 0.8,
         }));
 
+        console.log(pokeNameForSearch)
         dispatch(cartOpen());
         dispatch(cartValueTotal());     
     }
@@ -65,7 +69,8 @@ export function Home() {
                 ...prev,
                 total: data.count,
                 totalPages: Math.ceil(total / limit),
-                pokemons: [...prev.pokemons, ...data.results.map((pokemon, key) => <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)] 
+                pokemons: [...prev.pokemons, ...data.results.map((pokemon, key) => 
+                    <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)]
             }));
         });
     }, [state.currentPage, total]);

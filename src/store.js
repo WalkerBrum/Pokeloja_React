@@ -6,6 +6,7 @@ export const counterSlice = createSlice({
         open: false,
         items: [],
         total: 0,
+        pokeNameForSearch: '',
     },
     reducers: {
         cartOpen: state => {
@@ -58,10 +59,13 @@ export const counterSlice = createSlice({
                 return pokemon;
             });
         },
+        setPokeNameForSearch: (state, action) => {
+            state.pokeNameForSearch = action.payload
+        }
     }    
 });
 
-export const { cartOpen, cartClose, addToCart, moreQnty, lessQnty, deleteToCart, cartValueTotal } = counterSlice.actions;
+export const { cartOpen, cartClose, addToCart, moreQnty, lessQnty, deleteToCart, cartValueTotal, setPokeNameForSearch } = counterSlice.actions;
 
 export default configureStore({
     reducer: {
