@@ -12,7 +12,6 @@ const Pokemon = (props) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { pokeNameForSearch } = useSelector(state => state.cart);
 
     const name = props.name; 
     const id = props.url.replace('https://pokeapi.co/api/v2/pokemon/', '').replace('/', '');
@@ -29,7 +28,6 @@ const Pokemon = (props) => {
             price: price * 0.8,
         }));
 
-        console.log(pokeNameForSearch)
         dispatch(cartOpen());
         dispatch(cartValueTotal());     
     }
@@ -49,10 +47,13 @@ const Pokemon = (props) => {
     )
 }
 
-export function Home() {
+export function Home(props) {
 
     const limit = 20;
     let total;
+    const { pokeNameForSearch } = useSelector(state => state.cart);
+    console.log(pokeNameForSearch)
+    const lowerSearchPoke = pokeNameForSearch.toLowerCase();
 
     const [state, setState] = useState({
         loading: true,
@@ -63,17 +64,42 @@ export function Home() {
     });
 
     useEffect(() => {
-        PokemonApi.listPokemons(state.currentPage * limit, limit)
-        .then(({ data }) => {
-            setState((prev) => ({
-                ...prev,
-                total: data.count,
-                totalPages: Math.ceil(total / limit),
-                pokemons: [...prev.pokemons, ...data.results.map((pokemon, key) => 
-                    <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)]
-            }));
-        });
-    }, [state.currentPage, total]);
+
+        if (lowerSearchPoke.length > 0) {
+
+            PokemonApi.filterListPokemons()
+            .then(({ data }) => {
+            
+            const filterPoke = data.results.filter((poke) => poke.name.toLowerCase().includes(lowerSearchPoke));
+            console.log(data.results);
+
+                setState((prev) => ({
+                    ...prev,
+                    pokemons: [filterPoke.map((pokemon, key) => 
+                        <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)]
+                }));           
+            });
+
+        }  
+        
+        if (lowerSearchPoke.length === 0) {
+
+            PokemonApi.listPokemons(state.currentPage * limit, limit)
+            .then(({ data }) => {
+
+                setState((prev) => ({
+                    ...prev,
+                    total: data.count,
+                    totalPages: Math.ceil(total / limit),
+                    pokemons: [...data.results.map((pokemon, key) => 
+                        <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)]
+                }));           
+            });
+        }
+
+
+        
+    }, [state.currentPage, total, lowerSearchPoke]);
     
     const loadMore = () => {
 

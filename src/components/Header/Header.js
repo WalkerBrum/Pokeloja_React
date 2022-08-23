@@ -10,13 +10,13 @@ import { cartOpen, setPokeNameForSearch } from '../../store';
 export function Header() {
 
     const dispatch = useDispatch();
-    const { items: pokemons } = useSelector(state => state.cart);
+    const { items: pokemons, pokeNameForSearch } = useSelector(state => state.cart);
 
     return (
         <header className='header'>
             <div className='navegation'>
                 <img className='logo' src={logo} alt='Pokémon'/>
-                <Nav className='nav-header'/>
+                <Nav />
                 <div className='cart-division'>
                     {pokemons.length > 0 && <span className='cart-count'>{pokemons.length}</span>}
                     <FontAwesomeIcon
@@ -30,6 +30,7 @@ export function Header() {
                 <input 
                     type='text' 
                     placeholder='Encontre o seu pokémon'
+                    value={pokeNameForSearch}
                     onChange={(event) => dispatch(setPokeNameForSearch(event.target.value))}/>
                 <FontAwesomeIcon className='fa-search' icon={faSearch} />
             </div>

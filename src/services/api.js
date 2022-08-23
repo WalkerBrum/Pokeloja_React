@@ -13,6 +13,9 @@ export const PokemonApi = {
             }
         });
     },
+    filterListPokemons: () => {
+        return axios.get('/pokemon/?offset=20&limit=9999');
+    },
     getPokemonById: (id) => {
         return axios.get(`/pokemon/${id}`);
     }

@@ -39,6 +39,9 @@ export const counterSlice = createSlice({
                 }
             }
         },
+        cleanToCart: state => {
+           state.items.splice(0, state.items.length);
+        },
         moreQnty: (state, action) => {
             state.items.map((pokemon) => {
 
@@ -65,7 +68,7 @@ export const counterSlice = createSlice({
     }    
 });
 
-export const { cartOpen, cartClose, addToCart, moreQnty, lessQnty, deleteToCart, cartValueTotal, setPokeNameForSearch } = counterSlice.actions;
+export const { cartOpen, cartClose, addToCart, moreQnty, lessQnty, deleteToCart, cartValueTotal, setPokeNameForSearch, cleanToCart } = counterSlice.actions;
 
 export default configureStore({
     reducer: {

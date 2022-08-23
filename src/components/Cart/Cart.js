@@ -1,6 +1,6 @@
 import './Cart.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { cartClose } from '../../store';
+import { cartClose, cleanToCart } from '../../store';
 import { CartItems } from './CartItems';
 import { Botao } from '../Botao/Botao';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -28,10 +28,18 @@ export function Cart() {
                             FECHAR <FontAwesomeIcon icon={faArrowRight} />
                     </div>
                 </div>
+                {pokemons.length === 0 && <div className="cart-empty">Seu carrinho está vazio</div>}
+
                 {pokemons.length > 0 && <div className='main-cart'>
                     {pokemons.map((pokemon, index) => <CartItems key={index} item={pokemon} />)}
                     <p className="cart-total"><span>Total:</span> <span>R$ {total},00</span></p>
-                    <Botao className='button-finalize-purchase' texto='Finalizar Compra' /> 
+                    <Botao 
+                        className='clean-cart' 
+                        texto='Limpar Carrinho'
+                        onClick={() => dispatch(cleanToCart())} />
+                    <Botao 
+                        className='button-finalize-purchase'
+                        texto='Finalizar Compra' /> 
                 </div>}   
             </div>     
         </div>

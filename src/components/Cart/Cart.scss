@@ -57,6 +57,13 @@
         }
     }
 
+    .cart-empty {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 30px 10px;
+    }
+
     .main-cart {
         margin: 0 20px;
 
@@ -73,7 +80,13 @@
         .button-finalize-purchase {
             width: 100%;
             background-color: rgb(1, 129, 1);
-            margin: 20px 0;
+            margin: 10px 0;
+        }
+
+        .clean-cart {
+            width: 100%;
+            background-color: rgb(160, 0, 0);
+            margin-top: 20px;
         }
     }
 }

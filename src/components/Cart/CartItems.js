@@ -14,6 +14,7 @@ export function CartItems(props) {
 
     const lessQntyPoke = () => {
         dispatch(lessQnty(itemId));
+        dispatch(cartValueTotal());
     }
 
     const moreQntyPoke = () => {

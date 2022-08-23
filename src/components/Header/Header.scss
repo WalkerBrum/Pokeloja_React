@@ -42,11 +42,14 @@
 
         .cart-division {
             position: relative;
-
+            
             .acess-cart {
+                position: absolute;
                 color: black;
                 cursor: pointer;
                 font-size: 25px;
+                left: -31px;
+                top: -7px;
                 transition:  0.3s ease-in-out;
             }
     
@@ -63,8 +66,8 @@
                 background-color: white;
                 border-radius: 50%;
                 font-weight: bold;
-                right: 2px;
-                top: -24px;
+                right: 4px;
+                top: -20px;
             }
 
         }    
