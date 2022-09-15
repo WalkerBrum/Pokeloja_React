@@ -73,16 +73,21 @@
         }            
     }
 
-    .button-load button{
-        width: 200px;
-        margin: 30px;
-        background-color: #991717;
-    }
-
-    .button-load button:hover {
-        background-color: #580d0d;
-        box-shadow: 0 0 0.5em #580d0d;
-        transition: all ease 0.5s;
+    .button-load {
+        display: flex;
+        justify-content: space-between;
+        
+        button{
+            width: 200px;
+            margin: 30px;
+            background-color: #991717;
+        }
+    
+        button:hover {
+            background-color: #580d0d;
+            box-shadow: 0 0 0.5em #580d0d;
+            transition: all ease 0.5s;
+        }
     }
 }
 

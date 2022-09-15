@@ -50,9 +50,7 @@ const Pokemon = (props) => {
 export function Home(props) {
 
     const limit = 20;
-    let total;
     const { pokeNameForSearch } = useSelector(state => state.cart);
-    console.log(pokeNameForSearch)
     const lowerSearchPoke = pokeNameForSearch.toLowerCase();
 
     const [state, setState] = useState({
@@ -71,7 +69,6 @@ export function Home(props) {
             .then(({ data }) => {
             
             const filterPoke = data.results.filter((poke) => poke.name.toLowerCase().includes(lowerSearchPoke));
-            console.log(data.results);
 
                 setState((prev) => ({
                     ...prev,
@@ -79,7 +76,6 @@ export function Home(props) {
                         <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)]
                 }));           
             });
-
         }  
         
         if (lowerSearchPoke.length === 0) {
@@ -90,24 +86,25 @@ export function Home(props) {
                 setState((prev) => ({
                     ...prev,
                     total: data.count,
-                    totalPages: Math.ceil(total / limit),
+                    totalPages: Math.ceil(state.total / limit),
                     pokemons: [...data.results.map((pokemon, key) => 
                         <Pokemon key={key + (prev.pokemons.length + 1)} name={pokemon.name} url={pokemon.url} />)]
-                }));           
+                })); 
             });
         }
 
 
         
-    }, [state.currentPage, total, lowerSearchPoke]);
+    }, [state.currentPage, state.total, lowerSearchPoke]);
     
-    const loadMore = () => {
+    const nextPage = () => {
 
         let page = state.currentPage;
 
-        if ((page + 1) >= state.totalPages) return;
-
         page += 1;
+
+        console.log("Página atual = " + page);
+        console.log("Total de Páginas = " + state.totalPages);
 
         setState((prev) => ({
             ...prev,
@@ -115,13 +112,31 @@ export function Home(props) {
         }));
     }
 
+    const previouspage = () => {
+
+        let page = state.currentPage;
+
+        page -= 1;
+
+        setState((prev) => ({
+            ...prev,
+            currentPage: page
+        }));
+    }
+
+    const hasButtonPreviusPage = state.currentPage > 0;
+    const hasButtonNextPage = (state.currentPage + 1) < (state.totalPages);
+
     return (
         <main className='main'>
             <div className='poke-list'>
                 {state.pokemons}
             </div>
             <div className='button-load'>
-                <Botao texto='Carregar mais' onClick={loadMore}/>
+                { hasButtonPreviusPage ?
+                    <Botao texto='Página Anterior' onClick={previouspage}/> : <div/>}
+                { hasButtonNextPage &&
+                    <Botao texto='Próxima Página' onClick={nextPage} />}
             </div>
         </main>
     )
