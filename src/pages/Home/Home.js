@@ -96,6 +96,10 @@ export function Home(props) {
 
         
     }, [state.currentPage, state.total, lowerSearchPoke]);
+
+    const hasButtonPreviusPage = state.currentPage > 0;
+    const hasButtonNextPage = (state.currentPage + 1) < (state.totalPages);
+    const notSearchingPoke = lowerSearchPoke.length < 1;
     
     const nextPage = () => {
 
@@ -124,20 +128,18 @@ export function Home(props) {
         }));
     }
 
-    const hasButtonPreviusPage = state.currentPage > 0;
-    const hasButtonNextPage = (state.currentPage + 1) < (state.totalPages);
-
     return (
         <main className='main'>
             <div className='poke-list'>
                 {state.pokemons}
             </div>
-            <div className='button-load'>
-                { hasButtonPreviusPage ?
-                    <Botao texto='Página Anterior' onClick={previouspage}/> : <div/>}
-                { hasButtonNextPage &&
-                    <Botao texto='Próxima Página' onClick={nextPage} />}
-            </div>
+            {notSearchingPoke && 
+                <div className='button-load'>
+                    {hasButtonPreviusPage ?
+                        <Botao texto='Página Anterior' onClick={previouspage}/> : <div/>}
+                    {hasButtonNextPage &&
+                        <Botao texto='Próxima Página' onClick={nextPage} />}
+                </div>}
         </main>
     )
 }
