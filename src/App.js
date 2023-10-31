@@ -17,11 +17,11 @@ import { Contato } from './pages/Contato';
 
 function App() {
 
-  const dispatch = useDispatch();
+  const dispatchCart = useDispatch();
 
   const keydown = (e) => {
     if (e.code === 'Escape') {
-      dispatch(cartClose());
+      dispatchCart(cartClose());
     }
   }
 
